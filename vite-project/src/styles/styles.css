@@ -1,0 +1,131 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor para el listado de productos */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.product-info p {
+    color: #888;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.details-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.details-button:hover {
+    background-color: #0056b3;
+}
+
+/* Detalles del producto */
+.product-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px;
+}
+
+.product-detail-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.product-detail img {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.details-info {
+    width: 55%;
+    padding-left: 20px;
+}
+
+.product-detail h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.card-text {
+    color: #555;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 28px;
+    color: #007BFF;
+    margin-top: 20px;
+}
+
+.finalize-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.finalize-button:hover {
+    background-color: #0056b3;
+}
+

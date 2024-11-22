@@ -1,23 +1,29 @@
-import { useEffect, useState } from "react"
-import {getProducts, getProductsByCategory} from '../asyncMock.js'
-import ItemList from "./ItemList.jsx"
-import { useParams } from "react-router-dom"
+import { useEffect, useState } from "react";
+import { getProducts } from "../asyncMock";
+import { Link } from "react-router-dom";
 
-function ItemListContainer({greetings}) {
-    const [products, setProducts] = useState([])
-    const {categoryId} = useParams()
+function ItemListContainer({ greetings }) {
+    const [products, setProducts] = useState([]);
 
-    useEffect(()=>{
-        const asyncFunctions = categoryId ? getProductsByCategory : getProducts
-        asyncFunctions(categoryId)
-            .then(data => setProducts(data))
-    }, [categoryId])
-  return (
-    <>
-        <h2>{greetings}</h2>
-        <ItemList products={products} />
-    </>
-  )
+    useEffect(() => {
+        getProducts().then((data) => setProducts(data));
+    }, []);
+
+    return (
+        <div>
+            <h2>{greetings}</h2>
+            <div className="product-list">
+                {products.map((product) => (
+                    <div key={product.id} className="product-card">
+                        <h3>{product.name}</h3>
+                        <img src={product.img} alt={product.name} width="200" />
+                        <p>Precio: ${product.price}</p>
+                        <Link to={`/item/${product.id}`}>Ver detalle</Link>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 }
 
-export default ItemListContainer
+export default ItemListContainer;
