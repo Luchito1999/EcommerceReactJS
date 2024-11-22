@@ -1,30 +1,38 @@
-// import ItemListContainer from "./components/ItemListContainer/ItemListContainer"; 
-import NavBar from "./components/NavBar/NavBar";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
-import {Link} from "react-router-dom"
-import { useState } from "react"; 
-import Personajes from './components/personajes';
-import CharacterDetail from "./components/detalleCharacter";
-
-
-
+import NavBar from "./components/NavBar";
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import ItemListContainer from './components/ItemListContainer.jsx';
+import ItemDetailContainer from "./components/ItemDetailContainer";
+//import Ejemplo from "./pages/Ejemplo";
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <BrowserRouter>
-      <NavBar />
+      <NavBar cartCount={5} title="Tienda Coder" />
       <Routes>
-        <Route path="/" element={<h1>Hola</h1>} />
-        <Route path="/" element={<Personajes />} />
-        <Route path="/character/:id" element={<CharacterDetail />} />
-        <Route path="*" element={<h1>404 :</h1>} />
+        <Route
+          exact
+          path="/"
+          element={<ItemListContainer greetings={"Tienda Coder"} />}
+        />
+        <Route
+          exact
+          path="/category/:categoryId"
+          element={<ItemListContainer />}
+        />
+        <Route
+          exact
+          path="/detail/:productId"
+          element={<ItemDetailContainer />}
+        />
+        {/*
+        <Route path="/ejemplo" element={<Ejemplo />} />
+        <Route path="/manejoclick" element={<ManejoClick />} />
+        <Route path="/manejochange" element={<ManejoChange />} />
+        <Route path="/manejosubmit" element={<ManejoSubmit />} />
+        <Route path="/resolucionvocales" element={<ResolucionVocales />} /> */}
       </Routes>
-      <Personajes />
-      {/* <ItemListContainer /> */}
     </BrowserRouter>
   );
 }
 
-export default App;
-
+export default App
