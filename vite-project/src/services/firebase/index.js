@@ -6,12 +6,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAj3h-IQfh1ZEN53aW-WcnIMBJSbkPXjYk",
-  authDomain: "lucho-store.firebaseapp.com",
-  projectId: "lucho-store",
-  storageBucket: "lucho-store.firebasestorage.app",
-  messagingSenderId: "1021731196347",
-  appId: "1:1021731196347:web:dc47dc15b693b4a886089e"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
