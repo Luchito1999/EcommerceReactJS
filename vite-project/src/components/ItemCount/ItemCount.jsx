@@ -15,10 +15,10 @@ function ItemCount({initialValue=1, stock, onAdd}) {
   
     return (
     <>
-      <h1>{count}</h1>
-      <button onClick={decrement}>Decrementar</button>
-      <button onClick={() => onAdd(count)}>Agregar al carrito</button>
-      <button onClick={increment}>Incrementar</button>
+      <h2 className="card-text">{count}</h2>
+      <button onClick={increment} className="finalize-button">Incrementar</button>
+      <button onClick={() => onAdd(count)} className="finalize-button">Agregar al carrito</button>
+      <button onClick={decrement} className="finalize-button">Decrementar</button>
     </>
   );
 }

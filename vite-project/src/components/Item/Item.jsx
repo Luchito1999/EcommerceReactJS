@@ -9,7 +9,7 @@ function Item({product}) {
             <h2 className="card-title">{product.name}</h2>
             <p>{product.price}</p>
             <p>{product.description}</p>
-            <Link to={`/detail/${product.id}`}>Ver detalle</Link>
+            <Link to={`/item/${product.id}`}>Ver detalle</Link>
         </div>
     </div>
   )
