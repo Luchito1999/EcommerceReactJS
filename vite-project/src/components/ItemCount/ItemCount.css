@@ -1,0 +1,17 @@
+.card-text {
+    color: #555;
+    margin: 10px 0;
+}
+.finalize-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.finalize-button:hover {
+    background-color: #0056b3;
+}

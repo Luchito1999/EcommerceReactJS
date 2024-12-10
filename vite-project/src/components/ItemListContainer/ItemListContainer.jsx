@@ -3,13 +3,13 @@ import { Link, useParams } from "react-router-dom";
 import { db } from "../../services/firebase/index.js";
 import {collection, getDocs, query, where} from "firebase/firestore"
 import './ItemListContainer.css';
-// import { useNotification } from "../../hooks/useNotification.js";
+
 
 function ItemListContainer({ greetings }) {
     const [products, setProducts] = useState([]);
     const [loader, setLoader] = useState(false)
     const {categoryId} = useParams();
-    // const {setNotification} = useNotification()
+
 
     useEffect(() => {
         setLoader(true)
@@ -38,7 +38,6 @@ function ItemListContainer({ greetings }) {
      </div>
      
     }
-
 
     return (
         <div>
