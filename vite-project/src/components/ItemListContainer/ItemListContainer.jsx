@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import { db } from "../../services/firebase/index.js";
 import {collection, getDocs, query, where} from "firebase/firestore"
 import './ItemListContainer.css';
@@ -9,6 +9,7 @@ function ItemListContainer({ greetings }) {
     const [products, setProducts] = useState([]);
     const [loader, setLoader] = useState(false)
     const {categoryId} = useParams();
+    const location = useLocation();
 
 
     useEffect(() => {
@@ -41,11 +42,15 @@ function ItemListContainer({ greetings }) {
 
     return (
         <div>
-            <h2>{greetings}</h2>
+             {/* Renderiza el parallax solo si la ruta es "/" */}
+             {location.pathname === "/" && (
+                <div className="parallax"></div>
+            )}
+            <h2 className="greeting-header">{greetings}</h2>
             <div className="product-list">
                 {products.map((product) => (
                     <div key={product.id} className="product-card">
-                        <h3>{product.name}</h3>
+                        <h3 className="nombre-producto">{product.name}</h3>
                         <img src={product.img} alt={product.name} width="200" />
                         <p>Precio: ${product.price}</p>
                         <Link to={`/item/${product.id}`}>Ver detalle</Link>

@@ -28,13 +28,15 @@ function ItemDetail({ id, name, img, description, price, stock }) {
             </div>
 
             {
-                isInCart (id) ? (
-                    <Link to="/cart">Ir al carrito</Link>
-                ):
-                (
-                    <ItemCount stock={stock} onAdd={ handleAdd }/>
-                )
-            }
+    isInCart(id) ? (
+        <div className="button-group">
+            <Link to="/cart" className="finalize-button">Ir al carrito</Link>
+            <Link to="/" className="finalize-button">Seguir comprando</Link>
+        </div>
+    ) : (
+        <ItemCount stock={stock} onAdd={handleAdd} />
+    )
+}
         </div>
     );
 }

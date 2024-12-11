@@ -14,7 +14,7 @@ function App() {
         <CartProvider>
         <NavBar />
             <Routes>
-            <Route path="/" element={<ItemListContainer greetings="Bienvenido a la tienda de Fuchibol" />} />
+            <Route path="/" element={<ItemListContainer greetings="TRANSFORMÁ TU ESTILO" />} />
             <Route path="/category/:categoryId" element={<ItemListContainer/>}/>
             <Route path="/item/:itemId" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart/>}/>

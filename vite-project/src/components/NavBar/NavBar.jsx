@@ -25,7 +25,7 @@ function NavBar({ cartCount, title }) {
         <p>¡La mejor ropa la encontras acá!</p>
       </div>
       <nav className="bg-white border border-gray-200 dark:border-gray-700 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800 shadow">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center logo">
             <img src="../../assets/logoropa.png" alt="" />
           </Link>
         <div className="flex items-center">

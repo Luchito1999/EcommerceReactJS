@@ -55,9 +55,7 @@ header nav .container {
     width: 100%;
 }
 header .logo {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
+    margin-left: 3rem;
 }
 header .categories {
     display: flex;
