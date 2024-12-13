@@ -6,3 +6,5 @@ export const useCart = () => {
         useContext(CartContext)
     )
 }
+
+export default useCart;
