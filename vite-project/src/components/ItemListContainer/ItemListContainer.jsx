@@ -43,7 +43,7 @@ function ItemListContainer({ greetings }) {
     return (
         <div>
              {/* Renderiza el parallax solo si la ruta es "/" */}
-             {location.pathname === "/" && (
+                {location.pathname === "/" && (
                 <div className="parallax"></div>
             )}
             <h2 className="greeting-header">{greetings}</h2>
@@ -52,8 +52,8 @@ function ItemListContainer({ greetings }) {
                     <div key={product.id} className="product-card">
                         <h3 className="nombre-producto">{product.name}</h3>
                         <img src={product.img} alt={product.name} width="200" />
-                        <p>Precio: ${product.price}</p>
-                        <Link to={`/item/${product.id}`}>Ver detalle</Link>
+                        <p className="p-producto">Precio: USD$ {product.price}</p>
+                        <Link to={`/item/${product.id}`} className="btn-detalle">Ver detalle</Link>
                     </div>
                 ))}
             </div>

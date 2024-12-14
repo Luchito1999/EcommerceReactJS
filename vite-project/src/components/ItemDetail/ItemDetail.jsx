@@ -22,8 +22,8 @@ function ItemDetail({ id, name, img, description, price, stock }) {
                 <img src={img} alt={name} className="product-img" />
                 <div className="details-info">
                     <p className="card-text">{description}</p>
-                    <h2 className="price">Precio: $ {price}</h2>
-                    <h2 className="card-text">Disponible - {stock}</h2>
+                    <h2 className="price">Precio: USD$ {price}</h2>
+                    <h2 className="card-text">Disponibles: {stock}</h2>
                 </div>
             </div>
 

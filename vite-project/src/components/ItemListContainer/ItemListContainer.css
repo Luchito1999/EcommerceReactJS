@@ -103,8 +103,9 @@
 .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px; /* Espacio entre los productos */
-  padding: 20px; /* Opcional, para dar espacio interno */
+  gap: 2rem; 
+  padding: 2rem; 
+  margin-bottom: 2rem;
 }
 
 .product-card {
@@ -118,7 +119,13 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  height: 50rem; /* Altura fija para las cards */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card img {
+  width: 90%; /* Asegura que la imagen ocupe todo el ancho de la card */
+  height: 32rem; /* Altura fija para la imagen */
+  object-fit: cover; /* Asegura que la imagen se recorte adecuadamente sin deformarse */
 }
 .product-card:hover {
   transform: translateY(-10px);
@@ -126,7 +133,10 @@
 }
 .nombre-producto {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  padding: 2rem;
+  font-weight: bold;
+  margin: 0;
 }
 .parallax {
   background-image: url(../assets/portada.webp);
@@ -146,4 +156,39 @@
   letter-spacing: 2px; 
   margin: 2.5rem 0; 
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+.p-producto {
+  padding: 1.5rem;
+  font-size: 1.5rem;
+}
+.btn-detalle {
+  background-color: #050505; /* Verde deportivo */
+  color: white;
+  font-size: 1.2rem; 
+  padding: 8px 16px; 
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background-color 0.3s, transform 0.3s;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 10px; 
+}
+
+.btn-detalle:hover {
+  background-color: #868686; 
+  color: black;
+  transform: translateY(-2px); 
+}
+
+.btn-detalle:active {
+  background-color: #5957c9; 
+  transform: translateY(0); /* Se elimina la elevación */
+}
+
+.btn-detalle:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(87, 124, 192, 0.5); 
 }

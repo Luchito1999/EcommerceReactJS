@@ -4,11 +4,15 @@ import useAsync from '../../hooks/useAsync'
 import { createOrder } from '../../services/OrdersServices'
 import { sendOrderEmail } from '../../services/MailingServices'
 import Spinner from '../Spinner/Spinner'
+import { useContext } from 'react';
+import { NotificationContext } from '../../context/NotificationContext';
 
 
 
 function CheckoutForm() {
     const { cart, clearCart, getTotal } = useCart();
+    const { showNotification } = useContext(NotificationContext);
+
 
     const initialFormData = {
         name: "",

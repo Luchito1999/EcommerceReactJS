@@ -1,54 +1,54 @@
-// import { createContext,  useState } from "react";
+import { createContext, useState, useCallback, useEffect } from 'react'
+import './Notification.css'
 
+const NotificationContext = createContext();
 
-// export const NotificationContext = createContext()
+function NotificationProvider({ children }) {
+    const [notification, setNotification] = useState(null);
+    const [isFadingOut, setIsFadingOut] = useState(false);
 
-// export const NotificationProvider = ({children}) => {
-//     const [message, setMessage] = useState('')
-//     const [severity, setSeverity] = useState('success')
+    const showNotification = useCallback((message, type) => {
+        setNotification({ message, type });
+        setIsFadingOut(false);
+    }, []);
 
-//     const setNotification = (sev, msg) => {
-//         setMessage(msg)
-//         setSeverity(sev);
-//         setTimeout(() => {
-//             setMessage('')
-//         }, 3000)
-//     }
+    useEffect(() => {
+        if (notification) {
+            const fadeOutTimer = setTimeout(() => {
+                setIsFadingOut(true);
+            }, 4500);
 
-//     return (
-//         <NotificationContext.Provider value={{setNotification}}>
-//             <Notification message ={message} severity={severity} />
-//             {children}
-//         </NotificationContext.Provider>
-//     )
-// }
+            const clearNotificationTimer = setTimeout(() => {
+                setNotification(null);
+            }, 5000);
 
-// const Notification = ({message, severity}) => {
+            return () => {
+                clearTimeout(fadeOutTimer);
+                clearTimeout(clearNotificationTimer);
+            }
+        }
+    }, [notification]);
 
-//     const background = {
-//         success: 'green',
-//         danger: 'red',
-//         warning: 'orange',
-//         default: 'blue'
-//     }
+    return (
+        <NotificationContext.Provider value={{ showNotification }}>
+            {children}
+            {notification && (
+                <div
+                    className={`toast show position-fixed top-0 start-50 mt-5 translate-middle-x bg-${notification.type} ${isFadingOut ? 'fade-out' : 'fade-in'}`}
+                    role="alert"
+                    style={{
+                        zIndex: 1000,
+                        width: "90%",
+                        maxWidth: "900px",
+                    }}
+                >
+                    <div className="toast-body text-white text-center">
+                        {notification.message}
+                    </div>
+                </div>
+            )}
+        </NotificationContext.Provider>
+    )
+}
 
-//     const notificationStyle = {
-//         position: 'absolute',
-//         zIndex: 100,
-//         top: 100,
-//         right: 30,
-//         padding: '20px',
-//         backgroundColor: background[severity] || background.default
-//     }
-
-//     if(message === '') return 
-
-//     return (
-//         <div style={notificationStyle}>
-//             {message}
-//         </div>
-//     )
-
-// }
-
-
+export { NotificationProvider, NotificationContext }

@@ -10,7 +10,7 @@ function ItemList({ products }) {
                         <h3>{product.name}</h3>
                         <p>{product.description}</p>
                         <div className="price">${product.price}</div>
-                        <Link to={`/item/${product.id}`} className="details-button">Ver Detalles</Link>
+                        <Link to={`/item/${product.id}`} className="details-button">Ver Detalle</Link>
                     </div>
                 </div>
             ))}
