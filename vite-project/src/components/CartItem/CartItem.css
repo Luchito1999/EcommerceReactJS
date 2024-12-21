@@ -1,56 +1,91 @@
 .CardCartItem {
     display: flex;
-    justify-content: space-between;
-    width: auto;
-    padding: 20px;
-    margin: 30px;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    margin: 2rem 0;
     font-size: 16px;
-    background-color: papayawhip;
-    border: 1px solid #e1e1e1;
+    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 10px;
+    box-shadow: 0.2rem 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.InfoCartItem {
-    margin-right: 50px;
+.CardCartItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.HeaderCartItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.ItemHeaderCartItem {
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .ContainerItemCartItem {
     display: flex;
     justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-size: 16px;
+    color: #555;
 }
 
-.ItemHeaderCartItem {
-    display: flex;
-    justify-content: space-between;
-}
-
-.InfoCartItem {
-    font-size: 18px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.ButtonCartItem {
-    width: auto;
-    padding: 18px;
-    font-size: 8px;
-    background: #8C30F5;
-    border-radius: 8px;
-    flex: none;
-    display: flex;
-    order: 1;
-    align-self: center;
-    flex-grow: 0;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: #FFFFFF;
-    border: none;
-    border-style: none;
-    cursor: pointer;
-    outline: inherit;
+.ItemCartItem {
+    font-weight: bold;
+    flex: 1;
+    min-width: 120px;
 }
 
 .ItemFooterCartItem {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 10px;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan si es necesario */
+    background-color: #333; /* Mantener el fondo oscuro */
+    padding: 10px; /* Espaciado interno para que los elementos no queden pegados */
+    border-radius: 8px; /* Bordes redondeados */
+    color: #fff;
+}
+
+.InfoCartItem {
+    font-size: 14px;
+    color: #fff; /* Texto blanco para mayor contraste */
+    flex: 1;
+    text-align: right;
+    min-width: 100px;
+}
+
+.ButtonCartItem {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #8C30F5;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    min-width: 40px; /* Asegura un tamaño mínimo visible */
+    text-align: center;
+}
+
+.ButtonCartItem:hover {
+    background-color: #6b23c8;
+    transform: scale(1.05);
+}
+
+.ButtonCartItem:active {
+    transform: scale(0.95);
 }

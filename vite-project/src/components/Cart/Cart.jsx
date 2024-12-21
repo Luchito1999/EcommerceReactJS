@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom"
 import { useCart } from "../../hooks/useCart"
 import CartItem from "../CartItem/CartItem";
+import './Cart.css';
 
 export default function Cart() {
   const {cart, clearCart, getTotal, totalQuantity} = useCart();
@@ -11,15 +12,14 @@ export default function Cart() {
   }
   return (
     <div>
-      <h1>Carrito</h1>
       {cart.map((item) => (
         <CartItem key={item.id} {...item}/>
       ))}
-      <h2>Total: ${total}</h2>
-      <div>
+      <div className="cart-totales">
+      <h2>Total: USD$ {total} </h2>
         <button onClick={clearCart}className="btn btn-primary">Limpiar Carrito</button>
+        <Link to="/checkout" className="btn btn-primary">Ir a pagar</Link>
       </div>
-      <Link to="/checkout" className="btn btn-primary">Ir a pagar</Link>
     </div>
   )
 }

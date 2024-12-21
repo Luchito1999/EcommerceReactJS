@@ -1,0 +1,17 @@
+.cart-totales {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    gap: 1.5rem;
+}
+.cart-totales h2{
+    font-size: 2rem;
+}
+.cart-totales button {
+    width: 15rem;
+}
+.cart-totales a {
+    width: 15rem;
+}
