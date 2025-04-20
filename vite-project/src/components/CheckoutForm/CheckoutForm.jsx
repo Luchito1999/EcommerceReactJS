@@ -6,11 +6,13 @@ import { sendOrderEmail } from '../../services/MailingServices'
 import Spinner from '../Spinner/Spinner'
 import { useContext } from 'react';
 import { NotificationContext } from '../../context/NotificationContext';
+import './CheckoutForm.css';
+
 
 
 
 function CheckoutForm() {
-    const { cart, clearCart, getTotal } = useCart();
+    const { cart, clearCart, getTotal, showClearCartNotification } = useCart();
     const { showNotification } = useContext(NotificationContext);
 
 
@@ -110,7 +112,7 @@ function CheckoutForm() {
                 </div>
             ))}
 
-            <button type="submit" className="btn custom-btn mb-5" onClick={handleSubmit} disabled={loadingOrder || loadingEmail}>
+            <button type="submit" className="btn custom-btn mb-5 boton-end" onClick={handleSubmit} disabled={loadingOrder || loadingEmail}>
                 Finalizar Compra
             </button>
         </form>

@@ -26,7 +26,6 @@ function ItemDetail({ id, name, img, description, price, stock }) {
                     <h2 className="card-text">Disponibles: {stock}</h2>
                 </div>
             </div>
-
             {
     isInCart(id) ? (
         <div className="button-group">

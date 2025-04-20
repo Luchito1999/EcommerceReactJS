@@ -15,3 +15,8 @@
 .cart-totales a {
     width: 15rem;
 }
+h1 {
+    align-items: center;
+    font-size: 4rem;
+    margin: 10rem;
+}

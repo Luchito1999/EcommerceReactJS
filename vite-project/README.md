@@ -8,10 +8,11 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 // CREDENCIALES
-
+const firebaseConfig = {
   apiKey: "AIzaSyAj3h-IQfh1ZEN53aW-WcnIMBJSbkPXjYk",
   authDomain: "lucho-store.firebaseapp.com",
   projectId: "lucho-store",
   storageBucket: "lucho-store.firebasestorage.app",
   messagingSenderId: "1021731196347",
   appId: "1:1021731196347:web:dc47dc15b693b4a886089e"
+};

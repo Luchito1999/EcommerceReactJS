@@ -41,17 +41,21 @@ export const CartProvider = ({children}) =>{
         const cartUpdated = cart.filter( prod => prod.id !== id)
         setCart(cartUpdated)
     }
-
     const clearCart = () => {
-        setCart([]) 
-        Swal.fire({
+      setCart([]);
+  };
+  
+  // Mostrar la notificación solo cuando sea necesario
+  const showClearCartNotification = () => {
+      Swal.fire({
           position: "top-end",
           icon: "success",
           title: "El carrito se vació correctamente",
           showConfirmButton: true,
-          timer: 1200
-      })   
-    }
+          timer: 1200,
+      });
+  };
+  
     
     const getTotal = () => {
       let accu = 0;
@@ -78,6 +82,7 @@ export const CartProvider = ({children}) =>{
       addItem,
       removeItem,
       clearCart,
+      showClearCartNotification,
       totalQuantity,
       getTotal,
       increment,
