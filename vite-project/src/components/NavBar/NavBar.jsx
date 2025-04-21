@@ -2,6 +2,10 @@ import { useEffect } from "react";
 import CardWidget from "../CartWidget/CardWidget";
 import { Link, NavLink } from "react-router-dom";
 import './NavBar.css'
+import logoropa from '../../assets/logoropa.png';
+
+<img src={logoropa} alt="Logo" />
+
 
 function NavBar({ cartCount, title }) {
   useEffect(() => {
@@ -26,7 +30,7 @@ function NavBar({ cartCount, title }) {
       </div>
       <nav className="bg-white border border-gray-200 dark:border-gray-700 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800 shadow">
           <Link to="/" className="flex items-center logo">
-            <img src="../../assets/logoropa.png" alt="" />
+            <img src={logoropa} alt="" />
           </Link>
         <div className="flex items-center">
           <button

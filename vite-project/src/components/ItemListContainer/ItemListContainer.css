@@ -139,7 +139,7 @@
   margin: 0;
 }
 .parallax {
-  background-image: url(../assets/portada.webp);
+  background-image: url(../../assets/portada.webp);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
