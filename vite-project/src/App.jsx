@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import NavBar from "./components/NavBar/NavBar";
@@ -12,7 +12,7 @@ import { NotificationProvider } from './context/NotificationContext';
 
 function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <NotificationProvider>  
                 <CartProvider>
                     <NavBar />
@@ -27,7 +27,7 @@ function App() {
                     <Footer />
                 </CartProvider>
             </NotificationProvider>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
