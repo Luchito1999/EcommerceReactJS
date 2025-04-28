@@ -8,6 +8,7 @@ import Checkout from "./components/Checkout/Checkout";
 import { CartProvider } from "./context/CartContext";
 import Footer from "./components/Footer/Footer";
 import { NotificationProvider } from './context/NotificationContext';
+import Btn from "./components/BotonWsp/Btn";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <NotificationProvider>  
                 <CartProvider>
                     <NavBar />
+                    <Btn/>
                     <Routes>
                         <Route path="/" element={<ItemListContainer greetings="TRANSFORMÁ TU ESTILO" />} />
                         <Route path="/category/:categoryId" element={<ItemListContainer />} />

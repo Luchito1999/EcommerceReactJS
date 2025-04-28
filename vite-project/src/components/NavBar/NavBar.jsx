@@ -4,22 +4,22 @@ import { Link, NavLink } from "react-router-dom";
 import './NavBar.css'
 import logoropa from '../../assets/logoropa.png';
 
-<img src={logoropa} alt="Logo" />
+
 
 
 function NavBar({ cartCount, title }) {
   useEffect(() => {
     const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
-
-    menuToggle.addEventListener("click", () => {
+  
+    const toggleMenu = () => {
       mobileMenu.classList.toggle("hidden");
-    });
-
+    };
+  
+    menuToggle.addEventListener("click", toggleMenu);
+  
     return () => {
-      menuToggle.removeEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
+      menuToggle.removeEventListener("click", toggleMenu);
     };
   }, []);
 
@@ -30,7 +30,7 @@ function NavBar({ cartCount, title }) {
       </div>
       <nav className="bg-white border border-gray-200 dark:border-gray-700 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800 shadow">
           <Link to="/" className="flex items-center logo">
-            <img src={logoropa} alt="" />
+          <img src={logoropa} alt="Logo" />
           </Link>
         <div className="flex items-center">
           <button
